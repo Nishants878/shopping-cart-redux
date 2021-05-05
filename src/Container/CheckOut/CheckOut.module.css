@@ -1,0 +1,29 @@
+.MainContainer{
+    width: 95%;
+    height: 88vh;
+    
+    transition: all 0.28s;
+    overflow-y:auto;
+    overflow-x: hidden;
+    color: #2C2B2B ;
+}
+.Title{
+   letter-spacing: 0.2rem;
+   font-weight: 500;
+   font-size: 2.4rem;
+}
+.ProductWrapper{
+    display: flex;
+    justify-content: start;
+    margin-top: 3rem;
+}
+.CardList{
+    width: 50%;
+}
+.CardList>h3{
+    font-size: 24px;
+    color: rgba(0, 0, 0, 0.8);
+    font-weight: 400;
+    margin: 0;
+    margin-bottom: 16px;
+}
