@@ -14,7 +14,7 @@
 }
 .ProductWrapper{
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     margin-top: 3rem;
 }
 .CardList{
@@ -62,6 +62,9 @@
     border-radius: 6px;
     margin-top: 36px;
     font-weight: 600;
-    
+    transition: filter 300ms;
     color: white;
+}
+.PlaceOrder:hover{
+    filter: brightness(1.3);
 }

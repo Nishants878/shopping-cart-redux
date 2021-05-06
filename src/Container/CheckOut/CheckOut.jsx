@@ -1,20 +1,54 @@
 import React, {useEffect, useState} from 'react'
 import classes from './CheckOut.module.css';
-import { useDispatch, useSelector } from 'react-redux';
-import CheckoutCard from '../../Components/CheckoutCard/CheckoutCard'
+import {  useSelector, useDispatch } from 'react-redux';
+import CheckoutCard from '../../Components/CheckoutCard/CheckoutCard';
+
+import { checkOutAct } from '../../redux/reducer';
+import { useHistory } from 'react-router-dom'
 
 
 
-export default function CheckOut() {
+export default function CheckOut(props) {
 
     let  productCount = useSelector((state) => state.productCart);
-    let totalNumber = productCount.length
+    let totalNumber = productCount.length;
+   const history = useHistory()
+   const dispatch = useDispatch()
+  
     
-    const [cart, setCart] = useState([])
+    const [cart, setCart] = useState([]);
+    const [totalPrice, setTotalPrice] = useState(0);
+
+  
 
     useEffect(() =>{
-         setCart(productCount)
-    },[productCount])
+         setCart(productCount);
+         document.title = "Cart";
+
+        const totalForCurrentProduct = productCount.map((item) =>{
+            return item.count*item.titlePrice
+        });
+        const totalAddition = totalForCurrentProduct.reduce((acc, val) =>{
+            return acc + val
+        },0)
+
+      
+        setTotalPrice(totalAddition);
+        
+
+    },[productCount]);
+
+
+    const checkOutHandler = () =>{
+        dispatch(
+            checkOutAct({
+                val:"check"
+            })
+        );
+
+        alert("Order Placed");
+        history.push("/");
+    }
 
     return (
         <div className={classes.MainContainer}>
@@ -26,14 +60,14 @@ export default function CheckOut() {
               <h3>Total items: {totalNumber}</h3>
               {
                  cart.map((item) =>{
-                     return <CheckoutCard id={item.id} key={item.key} titlePrice={item.titlePrice} img={item.img} />
+                     return <CheckoutCard id={item.id} key={item.key} titlePrice={item.titlePrice} img={item.img}  />
                  })
              }
           </div>
           <div className={classes.OrderBxWrapper}>
               <h3>Total Amount</h3>
-              <p>Amount: Rs<span className={classes.Bold}>9598</span></p>
-              <button className={classes.PlaceOrder}>Place Order</button>
+              <p>Amount: Rs<span className={classes.Bold}>{totalPrice}</span></p>
+              <button onClick={checkOutHandler} className={classes.PlaceOrder}>Place Order</button>
           </div>
         </div>
         

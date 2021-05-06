@@ -21,7 +21,7 @@ export default function HomePage() {
          <div className={classes.ProductWrapper}>
              {
                  cardDetails.map((item) =>{
-                     return <ProductCard id={item.id} key={item.key} titlePrice={item.titlePrice} img={item.img} color={item.color} />
+                     return <ProductCard id={item.id} key={item.key} titlePrice={item.titlePrice} img={item.img} color={item.color} count={item.count} />
                  })
              }
          </div>

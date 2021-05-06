@@ -9,38 +9,44 @@ import six from './Icons/preview.png';
     "id": "1",
     "titlePrice": 5500,
     "img":one,
-    "color":"#921C23"
+    "color":"#921C23",
+    "count":0
     
   },
   {
     "id": "2",
     "titlePrice":6500,
     "img": two,
-    "color":"#007EB4"
+    "color":"#007EB4",
+    "count":0
   },
   {
     "id": "3",
     "titlePrice": 2500,
     "img": three,
-    "color":"#030401"
+    "color":"#030401",
+    "count":0
   },
   {
     "id": "3",
     "titlePrice": 8000,
     "img": four,
-    "color":"#5E6884"
+    "color":"#5E6884",
+    "count":0
   },
   {
     "id": "3",
     "titlePrice": 3000,
     "img": five,
-    "color":"#FC8172"
+    "color":"#FC8172",
+    "count":0
   },
   {
     "id": "3",
     "titlePrice": 9500,
     "img": six,
-    "color":"#ECECEC"
+    "color":"#ECECEC",
+    "count":0
   },
 ];
 

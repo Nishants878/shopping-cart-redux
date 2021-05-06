@@ -1,8 +1,8 @@
 import React from 'react'
 import classes from './ProductCard.module.css';
-import shoe from '../../Assest/Icons/airmax.png';
-import { Link } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+
+
+import { useDispatch } from 'react-redux';
 import { productAdded } from '../../redux/reducer'
 
 
@@ -15,7 +15,8 @@ export default function ProductCard(props) {
            productAdded({
                id:props.id,
                titlePrice:props.titlePrice,
-               img:props.img
+               img:props.img,
+               count:props.count +1
            })
        )
     }
