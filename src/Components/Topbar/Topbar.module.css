@@ -66,4 +66,16 @@
     .CartContainer>img{
         width: 100%;
     }
-    
+
+
+    @media screen and (max-width: 479px) {
+      .MainContainer{
+        width: 49%;
+      }
+
+        .NavBar{
+            margin-left: 5%;
+            margin-right: 16%;
+        }
+       
+    }

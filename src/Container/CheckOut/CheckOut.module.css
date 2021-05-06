@@ -68,3 +68,33 @@
 .PlaceOrder:hover{
     filter: brightness(1.3);
 }
+
+
+
+@media screen and (max-width: 479px) {
+    .ProductWrapper{
+      flex-direction: column;
+    }
+  .OrderBxWrapper{
+    width: 76%;
+  }
+  .MainContainer{
+      height: 80vh;
+  }
+  .PlaceOrder{
+    margin-top: 27px;
+    padding: 9px 29px;
+  }
+  .MainContainer::-webkit-scrollbar {
+    width: 5px;
+  }
+  .MainContainer::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+  }
+  .MainContainer::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+  }
+     
+  }

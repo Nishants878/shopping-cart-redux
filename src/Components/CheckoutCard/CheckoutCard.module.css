@@ -64,3 +64,17 @@
 }
 
 
+@media screen and (max-width: 479px) {
+    .MainContainer{
+      flex-direction: column;
+      width: 200px;
+      align-items: center;
+    }
+    .TextContentWrapper{
+        flex-direction: column;
+       
+    }
+     
+     
+  }
+
